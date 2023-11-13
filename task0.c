@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _printf - Custom printf func
+ * _printf - Custom printf function
  * @format: Format specifier string
  * Return: Number of char printed excluding null byte
  */
