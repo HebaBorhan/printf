@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i;
+	int i, length;
 
 	if (format == NULL)
 	{
@@ -36,8 +36,12 @@ int _printf(const char *format, ...)
 		} else if (format[i] == '%' && format[i + 1] == 's')
 		{
 			char *string = va_arg(args, char *);
-			int length = _strlen(string);
 
+			if (string == NULL)
+			{
+				write(1, "(null)", 6);
+			} else
+				length = _strlen(string);
 			write(1, string, length);
 			i++;
 		}
