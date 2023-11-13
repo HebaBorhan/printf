@@ -8,5 +8,6 @@
 
 int _strlen(char *string);
 int _printf(const char *format, ...);
+int print_int(const char *format, ...)
 
 #endif
