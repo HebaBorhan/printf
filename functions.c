@@ -44,7 +44,7 @@ int print_string(va_list args)
 		return (length);
 }
 
-int print_per(va_list args)
+int print_per(void)
 {
 	char b = '%';
 	write(1, &b, 1);
