@@ -33,12 +33,6 @@ int print_char(va_list args)
 	return (1);
 }
 
-/**
- * print_string - prints string
- * @args: arguments
- *
- * Return: string length
- */
 int print_string(va_list args)
 {
 	char *string = va_arg(args, char *);
