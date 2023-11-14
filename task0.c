@@ -37,7 +37,7 @@ i++;
 }
 for (j = 0; sps[j].spec; j++)
 {
-if (format[i] == sps[j].spec)
+if (format[i] == sps[j].spec[0])
 {
 counter += sps[j].f(args);
 break;
