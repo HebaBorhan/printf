@@ -35,13 +35,17 @@ while (format[i] == ' ')
 {
 i++;
 }
-for (j = 0; format[i] != '\0'; j++)
+for (j = 0; sps[j].spec != NULL; j++)
 {
-if (format[i] == sps[j].spec[0])
+if (format[i] == sps[j].spec)
 {
 counter += sps[j].f(args);
 break;
 }
+}
+if (sps[j].spec == NULL)
+{
+i++;
 }
 }
 }
