@@ -8,12 +8,12 @@
 int print_int(va_list integers)
 {
 int num = va_arg(integers, int);
-int counter, cell, digit, numcp;
+int counter, decimal, digit;
+unsigned int numcp;
 char sign = '\0';
 char integer;
-cell = 1;
+decimal = 1;
 counter = 0;
-numcp = num;
 if (num < 0)
 {
 sign = '-';
@@ -22,19 +22,23 @@ numcp = - numcp;
 num = -num;
 counter++;
 }
+else
+{
+    numcp = num;
+}
 if (numcp > 0)
 {
-while ((numcp / cell) >= 10)
+while ((numcp / decimal) >= 10)
 {
-cell = cell * 10;
+decimal = decimal * 10;
 }
-while (cell > 0)
+while (decimal > 0)
 {
-digit = numcp / cell;
+digit = numcp / decimal;
 integer = digit + '0';
 write (1, &integer, 1);
-numcp = numcp  % cell;
-cell = cell / 10;
+numcp = numcp  % decimal;
+decimal = decimal / 10;
 counter++;
 }
 }
