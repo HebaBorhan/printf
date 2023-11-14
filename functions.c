@@ -31,6 +31,7 @@ int print_char(va_list args)
 int print_string(va_list args)
 {
 	char *string = va_arg(args, char *);
+	int length;
 
 	if (string == NULL)
 	{
@@ -38,7 +39,7 @@ int print_string(va_list args)
 		return (6);
 	}
 	
-		int length = _strlen(string);
+		length = _strlen(string);
 		write(1, string, length);
 		return (length);
 }
