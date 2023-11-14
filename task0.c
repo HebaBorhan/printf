@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 {
 va_list args;
 int i, j, counter = 0;
+char d;
 spec_t sps[] = {
 {"c", print_char},
 {"s", print_string},
@@ -41,6 +42,11 @@ if (format[i] == sps[j].spec[0])
 {
 counter += sps[j].f(args);
 break;
+}
+else if (sps[j].spec == '\0')
+{
+d = format[i] + '0';
+write(1, &d, 1);
 }
 }
 }
