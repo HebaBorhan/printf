@@ -51,10 +51,6 @@ int _printf(const char *format, ...)
 				{
 					write(1, "(null)", 6);
 				}
-				else if (string == 0)
-				{
-					break;
-				}
 				else
 				{
 					length = _strlen(string);
