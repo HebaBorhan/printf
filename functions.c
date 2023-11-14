@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stddef.h>
+#include <unistd.h>
 
 /**
  * _strlen - returns the length of a string
@@ -16,4 +18,34 @@ int _strlen(char *string)
 	}
 
 	return (length);
+}
+
+int print_char(va_list args)
+{
+	char c = va_arg(args, int);
+
+	write(1, &c, 1);
+	return (1);
+}
+
+int print_string(va_list args)
+{
+	char *string = va_arg(args, char *);
+
+	if (string == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	
+		int length = _strlen(string);
+		write(1, string, length);
+		return (length);
+}
+
+int print_per(va_list args)
+{
+	char b = '%';
+	write(1, &b, 1);
+	return (1);
 }
