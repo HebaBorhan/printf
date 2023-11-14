@@ -42,10 +42,6 @@ if (format[i] == sps[j].spec)
 counter += sps[j].f(args);
 break;
 }
-else if (sps[j].spec == '\0')
-{
-i++;
-}
 }
 }
 }
