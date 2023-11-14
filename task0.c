@@ -13,7 +13,7 @@ int i, j, counter = 0;
 char d;
 spec_t sps[] = {
 {"c", print_char}, {"s", print_string}, {"%", print_per},
-{'d', print_int}, {'i', print_int}, {'\0', NULL}
+{"d", print_int}, {"i", print_int}, {'\0', NULL}
 };
 if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 {
