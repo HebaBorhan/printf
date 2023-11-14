@@ -55,8 +55,10 @@ int _printf(const char *format, ...)
 					break;
 				}
 				else
+				{
 					length = _strlen(string);
 					write(1, string, length);
+				}
 			}
 		}
 	}
