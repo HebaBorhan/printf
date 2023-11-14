@@ -1,21 +1,31 @@
 #include "main.h"
+#include <stddef.h>
+#include <unistd.h>
+
 /**
- * _printf - Custom printf func
+ * _printf - Custom printf function
  * @format: Format specifier string
  * Return: Number of char printed excluding null byte
  */
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, length;
+	int i, j, counter;
 	
+	spec_t sps[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"%", print_per},
+		{'\0', NULL}
+		};
+
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		return (-1);
 	}
 
 	va_start(args, format);
-	
+
 	for (i = 0; format[i] != '\0'; i++)
 	{
 
@@ -32,33 +42,17 @@ int _printf(const char *format, ...)
 			{
 				i++;
 			}
-			if (format[i] == '%')
-			{
-				char b = format[i];
-				write(1, &b, 1);
-			}
-			else if (format[i] == 'c')
-			{
-				char c = va_arg(args, int);
 
-				write(1, &c, 1);
-			}
-			else if (format[i] == 's')
+			for (j = 0; format[i] != '\0'; j++)
 			{
-				char *string = va_arg(args, char *);
-
-				if (string == NULL)
+				if (format[i] == sps[j].spec[0])
 				{
-					write(1, "(null)", 6);
-				}
-				else
-				{
-					length = _strlen(string);
-					write(1, string, length);
+					counter = sps[j].f(args);
+					break;
 				}
 			}
 		}
 	}
 	va_end(args);
-	return (i);
+	return (i + counter);
 }
