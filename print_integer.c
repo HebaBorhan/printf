@@ -1,4 +1,7 @@
 #include "main.h"
+#include <stddef.h>
+#include <unistd.h>
+
 /**
 * print_int - function that handels conversion specifiers
 * of d and i specifiers
