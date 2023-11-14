@@ -18,8 +18,7 @@ if (num < 0)
 {
 sign = '-';
 write (1, &sign, 1);
-numcp = - numcp;
-num = -num;
+numcp = - num;
 counter++;
 }
 else
