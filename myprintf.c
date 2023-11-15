@@ -40,12 +40,10 @@ if (sps[j].spec[0] == '\0')
 {
 d = format[i] + '0';
 write(1, &d, 1);
-break;
 }
 else if (format[i] == sps[j].spec[0])
 {
 counter += sps[j].f(args);
-break;
 }
 }
 }
