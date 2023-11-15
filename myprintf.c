@@ -9,20 +9,20 @@
  */
 int _printf(const char *format, ...)
 {
-    va_list args;
-    int counter;
+va_list args;
+int counter;
 
-    if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-    {
-        return (-1);
-    }
+if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+{
+return (-1);
+}
 
-    counter = 0;
+counter = 0;
 
-    va_start(args, format);
+va_start(args, format);
 
-    counter = func(format, args);
+counter = func(format, args);
 
-    va_end(args);
-    return (counter);
+va_end(args);
+return (counter);
 }

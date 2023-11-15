@@ -1,41 +1,47 @@
 #include "main.h"
 #include <stddef.h>
 #include <unistd.h>
-
+/**
+ * func - dealing with struct and format
+ * @format: string
+ * @args: arguments
+ *
+ * Return: count
+ */
 int func(const char *format, va_list args)
 {
-    spec_t sps[] = {
-        {'c', print_char},
-        {'s', print_string},
-        {'%', print_per},
-        {'\0', NULL}};
+spec_t sps[] = {
+{'c', print_char},
+{'s', print_string},
+{'%', print_per},
+{'\0', NULL}};
 
-    int i, j, count = 0;
+int i, j, count = 0;
 
-    for (i = 0; format[i] && format; i++)
-    {
-        if (format[i] != '%')
-        {
-            char a = format[i];
+for (i = 0; format[i] && format; i++)
+{
+if (format[i] != '%')
+{
+char a = format[i];
 
-            write(1, &a, 1);
-        }
-        else if (format[i] == '%')
-        {
-            while (format[i + 1] == ' ')
-            {
-                i++;
-            }
+write(1, &a, 1);
+}
+else if (format[i] == '%')
+{
+while (format[i + 1] == ' ')
+{
+i++;
+}
 
-            for (j = 0; sps[j].spec != '\0'; j++)
-            {
-                if (format[i + 1] == sps[j].spec)
-                {
-                    count += sps[j].f(args);
-                    i += 1;
-                }
-            }
-        }
-    }
-    return (count);
+for (j = 0; sps[j].spec != '\0'; j++)
+{
+if (format[i + 1] == sps[j].spec)
+{
+count += sps[j].f(args);
+i += 1;
+}
+}
+}
+}
+return (count);
 }
