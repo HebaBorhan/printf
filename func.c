@@ -12,12 +12,13 @@ int func(const char *format, va_list args)
 spec_t sps[] = {
 {'c', print_char}, {'s', print_string}, {'%', print_per}};
 int i, j, temp, count = 0;
+char a, b;
 for (i = 0; format[i] && format; i++)
 {
 Start:
 if (format[i] != '%')
 {
-char a = format[i];
+a = format[i];
 count += write(1, &a, 1);
 }
 else if (format[i] == '%')
@@ -44,7 +45,7 @@ goto Start;
 }
 j--;
 }
-char b = format[i];
+b = format[i];
 count += write(1, &b, 1);
 i++;
 }
