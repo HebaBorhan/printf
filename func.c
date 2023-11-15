@@ -15,7 +15,6 @@ spec_t sps[] = {
 {'s', print_string},
 {'%', print_per},
 {'\0', NULL}};
-
 int i, j, count = 0;
 
 for (i = 0; format[i] && format; i++)
@@ -44,6 +43,7 @@ if (format[i + 1] == sps[j].spec)
 {
 count += sps[j].f(args);
 i += 1;
+}
 }
 }
 }
