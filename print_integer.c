@@ -4,7 +4,7 @@
 /**
 * print_int - function that handels conversion specifiers
 * of d and i specifiers
-* @integers: list of arguments to be prented
+* @args: list of arguments to be prented
 * Return: counter
 */
 int print_int(va_list args)
