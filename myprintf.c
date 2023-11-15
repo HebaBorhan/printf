@@ -34,17 +34,18 @@ while (format[i] == ' ')
 {
 i++;
 }
-for (j = 0; sps[j].spec; j++)
+for (j = 0; j < 6; j++)
 {
-if (format[i] == sps[j].spec[0])
-{
-counter += sps[j].f(args);
-break;
-}
-else if (sps[j].spec[0] == '\0')
+if (sps[j].spec[0] == '\0')
 {
 d = format[i] + '0';
 write(1, &d, 1);
+break;
+}
+else if (format[i] == sps[j].spec[0])
+{
+counter += sps[j].f(args);
+break;
 }
 }
 }
