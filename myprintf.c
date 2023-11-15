@@ -34,7 +34,7 @@ while (format[i] == ' ')
 {
 i++;
 }
-for (j = 0; format[i] != seps[j].spec[0]; j++)
+for (j = 0; format[i] != sps[j].spec[0]; j++)
 {
 if (sps[j].spec[0] == '\0')
 {
