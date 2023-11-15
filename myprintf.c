@@ -10,9 +10,11 @@
 int _printf(const char *format, ...)
 {
 va_list args;
-int counter;
+int i, counter;
 
-if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+i = 0;
+
+if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
 {
 return (-1);
 }
