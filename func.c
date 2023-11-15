@@ -41,10 +41,6 @@ count += sps[j].f(args);
 i += 1;
 }
 }
-if (format[i + 1] == '\0')
-{
-return (-1);
-}
 }
 }
 return (count);
