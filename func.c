@@ -31,19 +31,12 @@ while (format[i + 1] == ' ')
 {
 i++;
 }
-if (format[i + 1] == '\0')
-{
-return (-1);
-}
-else
-{
 for (j = 0; sps[j].spec != '\0'; j++)
 {
 if (format[i + 1] == sps[j].spec)
 {
 count += sps[j].f(args);
 i += 1;
-}
 }
 }
 }
