@@ -19,7 +19,7 @@ int i, j, count = 0;
 
  i = 0;
 
-if (format == NULL || (format[i] == '\0'))
+if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
 {
 return (-1);
 }
