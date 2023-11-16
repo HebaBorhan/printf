@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 va_list args;
 int counter;
-if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+if (format == NULL)
 {
 return (-1);
 }
