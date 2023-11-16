@@ -15,35 +15,39 @@ spec_t sps[] = {
 {'s', print_string},
 {'%', print_per},
 {'\0', NULL}};
-int i, j, count = 0;
-
-for (i = 0; format[i] && format; i++)
+int i, j, tmp, count = 0;
+char a, b;
+for (i = 0; format[i]; i++)
 {
+Start:
 if (format[i] != '%')
 {
-char a = format[i];
-
+a = format[i];
 count += write(1, &a, 1);
 }
 else if (format[i] == '%')
 {
-while (format[i + 1] == ' ')
+i++;
+tmp = i;
+while (format[i] == ' ')
 {
 i++;
 }
-if (format[i + 1] == '\0')
+if (format[i] == '\0' || format[tmp] == '\0')
 {
 return (-1);
 }
-else
+for (j = 0; sps[j].spec; j++)
 {
-for (j = 0; sps[j].spec != '\0'; j++)
-{
-if (format[i + 1] == sps[j].spec)
+if (format[i] == sps[j].spec)
 {
 count += sps[j].f(args);
-i += 1;
+goto Start;
 }
+if (sps[j].spec == '\0')
+{
+b = format[i];
+count += write (1, &b, 1);
 }
 }
 }
