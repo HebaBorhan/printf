@@ -31,6 +31,11 @@ while (format[i + 1] == ' ')
 {
 i++;
 }
+if (format[i + 1] == '%')
+{
+count = print_per();
+i += 1;
+}
 for (j = 0; sps[j].spec != '\0'; j++)
 {
 if (format[i + 1] == sps[j].spec)
