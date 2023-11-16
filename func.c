@@ -17,6 +17,12 @@ spec_t sps[] = {
 {'\0', NULL}};
 int i, j, count = 0;
 
+ i = 0;
+
+if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
+{
+return (-1);
+}
 for (i = 0; format[i] && format; i++)
 {
 if (format[i] != '%')
