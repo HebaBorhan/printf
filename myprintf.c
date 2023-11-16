@@ -28,3 +28,4 @@ counter = func(format, args);
 va_end(args);
 return (counter);
 }
+
