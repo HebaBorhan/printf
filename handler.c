@@ -20,7 +20,8 @@ break;
 }
 else if (i == 3 && s != sps[i].spec)
 {
-count++;
+count += 2;
+write(1, "%", 1);
 write(1, &s, 1);
 }
 }
