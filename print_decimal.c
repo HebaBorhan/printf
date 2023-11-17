@@ -12,6 +12,7 @@ int print_deci(va_list args)
 {
 int decimal = 1, count = 0;
 long int digit, num = va_arg(args, int);
+char integer;
 if (num < 0)
 {
 count++;
