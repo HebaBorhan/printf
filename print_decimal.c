@@ -10,7 +10,7 @@
 */
 int print_deci(va_list args)
 {
-long int digit, num = va_arg(args, long int);
+int digit, num = va_arg(args, int);
 int decimal, count = 0;
 char integer;
 decimal = 1;
