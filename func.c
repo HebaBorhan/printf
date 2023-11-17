@@ -26,7 +26,7 @@ temp = i;
 while (format[i] == ' ')
 i++;
 if (format[i] == '\0' || format[temp] == '\0')
-return (-1);
+return (0);
 else if (format[i] == '%')
 {
 print_per();
