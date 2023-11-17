@@ -1,39 +1,41 @@
 #include <stdarg.h>
 #include <unistd.h>
+#include <limits.h>
 #include "main.h"
 /**
-* print_int - function that handels conversion specifiers
+* print_deci - function that handels conversion specifiers
 * of d and i specifiers
 * @args: list of arguments to be prented
 * Return: counter
 */
-int print_int(va_list args)
+int print_deci(va_list args)
 {
-int num = va_arg(args, int);
-int counter, decimal, digit;
-char integer, sign = '\0';
+long int digit, num = va_arg(args, long int);
+int decimal, count = 0;
+char integer;
 decimal = 1;
-counter = 0;
 if (num < 0)
 {
-sign = '-';
-write(1, &sign, 1);
+count++;
+write(1, "-", 1);
 num = -num;
-counter++;
 }
-while ((num / decimal) >= 10)
-{
+while ((num / decimal) > 1)
 decimal = decimal * 10;
-}
 while (decimal >= 1)
 {
 digit = num / decimal;
+if (digit == 0)
+write(1, "0", 1);
+else
+{
 integer = digit + '0';
 write(1, &integer, 1);
-num = num - (decimal * 10);
-decimal = decimal / 10;
-counter++;
 }
-return (counter);
+num = num % decimal;
+decimal = decimal / 10;
+count++;
+}
+return (count);
 }
 

@@ -11,11 +11,8 @@ int handler(char s, va_list args)
 {
 int i, count = 0;
 spec_t sps[] = {
-	{'c', print_char},
-	{'s', print_string},
-	{'r', print_rev},
-	{'\0', NULL}
-};
+{'c', print_char}, {'s', print_string}, {'d', print_deci},
+{'i', print_deci}, {'r', print_rev}, {'\0', NULL}};
 for (i = 0; i <= 4; i++)
 {
 if (s == sps[i].spec)
