@@ -36,5 +36,6 @@ int print_rev(va_list args)
 			write(1, &c, 1);
 			count++;
 		}
+	}
 		return (count);
 }
