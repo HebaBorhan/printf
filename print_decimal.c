@@ -20,7 +20,7 @@ count++;
 write(1, "-", 1);
 num = -num;
 }
-while ((num / decimal) > 1)
+while ((num / decimal) >= 10)
 decimal = decimal * 10;
 while (decimal >= 1)
 {
