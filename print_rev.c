@@ -17,19 +17,24 @@ int print_rev(va_list args)
 
 	i = 0;
 
-	while (s[i] != '\0')
+	if (s == NULL)
 	{
-		i++;
+		write(1, "(null)", 6);
+		count = 6;
 	}
-
-	while (i--)
+	else
 	{
-		char c = s[i];
+		while (s[i] != '\0')
+		{
+			i++;
+		}
+		while (i--)
+		{
+			char c = s[i];
+			count = 0;
 
-		count = 0;
-
-		write(1, &c, 1);
-		count++;
-	}
+			write(1, &c, 1);
+			count++;
+		}
 		return (count);
 }
