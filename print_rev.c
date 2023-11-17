@@ -10,8 +10,10 @@
  * Return: int number of char printed
  */
 
-int print_rev(va_list args, char *s)
+int print_rev(va_list args)
 {
+	char *s;
+
 	int i, count;
 
 	i = 0;
@@ -23,7 +25,7 @@ int print_rev(va_list args, char *s)
 
 	while (i--)
 	{
-		char c = va_arg(args, char *s);
+		char c = va_arg(args, int);
 
 		count = 0;
 
