@@ -13,8 +13,9 @@
 int print_rev(va_list args)
 {
 	char *s;
-
 	int i, count;
+
+	char *s = va_arg(args, char *);
 
 	i = 0;
 
@@ -25,7 +26,7 @@ int print_rev(va_list args)
 
 	while (i--)
 	{
-		char c = va_arg(args, int);
+		char c = s[i];
 
 		count = 0;
 
