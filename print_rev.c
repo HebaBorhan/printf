@@ -4,6 +4,7 @@
 
 /**
  * print_rev - prints a string in reverse
+ * @args: arguments
  * @s: string to be printed
  *
  * Return: int number of char printed
