@@ -16,6 +16,7 @@ int print_rev(va_list args)
 	int i, count;
 
 	i = 0;
+	count = 0;
 
 	if (s == NULL)
 	{
@@ -31,7 +32,6 @@ int print_rev(va_list args)
 		while (i--)
 		{
 			char c = s[i];
-			count = 0;
 
 			write(1, &c, 1);
 			count++;
