@@ -12,10 +12,9 @@
 
 int print_rev(va_list args)
 {
-	char *s;
-	int i, count;
-
 	char *s = va_arg(args, char *);
+
+	int i, count;
 
 	i = 0;
 
