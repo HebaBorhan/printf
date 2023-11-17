@@ -12,7 +12,7 @@ va_list args;
 int counter;
 if (format == NULL)
 {
-return (32766);
+return (-1);
 }
 counter = 0;
 va_start(args, format);
