@@ -4,7 +4,7 @@
 /**
 * _strlen - returns the length of a string
 * @string: the string to be checked
-* Return: i which is the length of the string
+* Return: length of the string
 */
 int _strlen(char *string)
 {
@@ -29,7 +29,7 @@ return (1);
 /**
 * print_string - print string array of chars
 * @args: arguments
-* Return: 1
+* Return: length
 */
 int print_string(va_list args)
 {
@@ -53,7 +53,7 @@ return (length);
 */
 int print_per(void)
 {
-char b = '%';
-write(1, &b, 1);
+write(1, "%", 1);
 return (1);
 }
+
