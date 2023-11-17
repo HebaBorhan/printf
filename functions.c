@@ -38,15 +38,14 @@ int length = 0;
 if (string == NULL)
 {
 write(1, "(null)", 6);
-return (6);
+length = 6;
 }
 else
 {
 length = _strlen(string);
 write(1, string, length);
-length++;
-return (length);
 }
+return (length);
 }
 /**
 * print_per - prints %

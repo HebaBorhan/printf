@@ -9,7 +9,7 @@
 typedef struct spec
 {
 char spec;
-int (*f)();
+int (*f)(va_list);
 } spec_t;
 int _strlen(char *string);
 int print_char(va_list args);
