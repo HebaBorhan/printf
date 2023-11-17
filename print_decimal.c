@@ -10,10 +10,8 @@
 */
 int print_deci(va_list args)
 {
-int digit, num = va_arg(args, int);
-int decimal, count = 0;
-char integer;
-decimal = 1;
+int decimal = 1, count = 0;
+long int digit, num = va_arg(args, int);
 if (num < 0)
 {
 count++;
