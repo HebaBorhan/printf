@@ -23,7 +23,8 @@ if (format[i] != '%')
 {
 char a = format[i];
 
-count += write(1, &a, 1);
+count++;
+write(1, &a, 1);
 }
 else if (format[i] == '%')
 {
