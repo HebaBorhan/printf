@@ -10,7 +10,7 @@
 int handler(char s, va_list args)
 {
 int i, count = 0;
-spec_t sps[] = {{'c', print_char},{'s', print_string},{'\0', NULL}};
+spec_t sps[] = {{'c', print_char}, {'s', print_string}, {'\0', NULL}};
 for (i = 0; i <= 3; i++)
 {
 if (s == sps[i].spec)
